@@ -71,7 +71,7 @@ export default function Home() {
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-6 text-gray-100">Task Manager</h1>
       
-      <form onSubmit={handleSubmit} className="mb-8">
+        <form onSubmit={handleSubmit} className="mb-8">
         <div className="mb-4">
           <input
             type="text"
