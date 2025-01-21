@@ -73,29 +73,29 @@ export default function Home() {
       
         <form onSubmit={handleSubmit} className="mb-8">
           <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Task Title"
-            value={newTask.title}
-            onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-            className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            required
-          />
+            <input
+              type="text"
+              placeholder="Task Title"
+              value={newTask.title}
+              onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+              className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
           </div>
           <div className="mb-4">
-          <textarea
-            placeholder="Task Description"
-            value={newTask.description}
-            onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-            className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            required
-          />
+            <textarea
+              placeholder="Task Description"
+              value={newTask.description}
+              onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
+              className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
           </div>
           <button 
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-        >
-          Add Task
+            type="submit"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+          >
+            Add Task
           </button>
         </form>
 
