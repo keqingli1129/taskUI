@@ -11,7 +11,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/tasks');
+      const response = await axios.get('/api/tasks');
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -21,7 +21,7 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/tasks', {
+      await axios.post('/api/tasks', {
         ...newTask,
         completed: false
       });
