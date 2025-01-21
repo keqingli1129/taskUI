@@ -72,7 +72,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-6 text-gray-100">Task Manager</h1>
       
         <form onSubmit={handleSubmit} className="mb-8">
-        <div className="mb-4">
+          <div className="mb-4">
           <input
             type="text"
             placeholder="Task Title"
@@ -81,8 +81,8 @@ export default function Home() {
             className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
-        </div>
-        <div className="mb-4">
+          </div>
+          <div className="mb-4">
           <textarea
             placeholder="Task Description"
             value={newTask.description}
@@ -90,14 +90,14 @@ export default function Home() {
             className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
-        </div>
-        <button 
+          </div>
+          <button 
           type="submit"
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
         >
           Add Task
-        </button>
-      </form>
+          </button>
+        </form>
 
       <div>
         <h2 className="text-xl font-bold mb-4">Tasks</h2>
