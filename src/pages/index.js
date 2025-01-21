@@ -67,8 +67,9 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Task Manager</h1>
+    <div className="min-h-screen bg-dark-800 text-gray-100">
+      <div className="container mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-6 text-gray-100">Task Manager</h1>
       
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="mb-4">
@@ -77,7 +78,7 @@ export default function Home() {
             placeholder="Task Title"
             value={newTask.title}
             onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-            className="border p-2 rounded w-full"
+            className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
@@ -86,13 +87,13 @@ export default function Home() {
             placeholder="Task Description"
             value={newTask.description}
             onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-            className="border p-2 rounded w-full"
+            className="bg-dark-700 border-dark-600 text-gray-100 border p-2 rounded w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
         <button 
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
         >
           Add Task
         </button>
@@ -101,30 +102,30 @@ export default function Home() {
       <div>
         <h2 className="text-xl font-bold mb-4">Tasks</h2>
         {tasks.map((task) => (
-          <div key={task.id} className="border p-4 mb-2 rounded">
+          <div key={task.id} className="bg-dark-700 border border-dark-600 p-4 mb-2 rounded-lg">
             {editingTask?.id === task.id ? (
               <div>
                 <input
                   type="text"
                   value={editingTask.title}
                   onChange={(e) => setEditingTask({ ...editingTask, title: e.target.value })}
-                  className="border p-2 rounded w-full mb-2"
+                  className="bg-dark-600 border-dark-500 text-gray-100 border p-2 rounded w-full mb-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
                 <textarea
                   value={editingTask.description}
                   onChange={(e) => setEditingTask({ ...editingTask, description: e.target.value })}
-                  className="border p-2 rounded w-full mb-2"
+                  className="bg-dark-600 border-dark-500 text-gray-100 border p-2 rounded w-full mb-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleUpdate(editingTask)}
-                    className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+                    className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition-colors"
                   >
                     Save
                   </button>
                   <button
                     onClick={() => setEditingTask(null)}
-                    className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600"
+                    className="bg-dark-500 text-white px-3 py-1 rounded hover:bg-dark-400 transition-colors"
                   >
                     Cancel
                   </button>
@@ -139,20 +140,20 @@ export default function Home() {
                     type="checkbox"
                     checked={task.completed}
                     onChange={() => toggleComplete(task)}
-                    className="h-4 w-4"
+                    className="h-4 w-4 rounded border-dark-400 bg-dark-600 checked:bg-blue-600 focus:ring-blue-500"
                   />
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-400">
                     {task.completed ? 'Completed' : 'Pending'}
                   </span>
                   <button
                     onClick={() => setEditingTask(task)}
-                    className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 ml-auto"
+                    className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-colors ml-auto"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => handleDelete(task.id)}
-                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                    className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition-colors"
                   >
                     Delete
                   </button>
